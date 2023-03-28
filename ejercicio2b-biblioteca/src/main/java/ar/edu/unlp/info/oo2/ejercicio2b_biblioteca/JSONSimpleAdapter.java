@@ -1,4 +1,4 @@
-package ar.edu.unlp.info.oo2.ejercicio2b_bibliotec;
+package ar.edu.unlp.info.oo2.ejercicio2b_biblioteca;
 
 import java.util.List;
 import org.json.simple.JSONArray;
@@ -16,9 +16,9 @@ public class JSONSimpleAdapter implements VoorheesExporter {
 
 	@Override
 	public String exportar(List<Socio> socios) {
-		JSONArray array = new JSONArray();
-		socios.stream().forEach(socio -> array.add(crearJSON(socio)));
-		return array.toJSONString();
+		JSONArray listado = new JSONArray();
+		socios.stream().forEach(socio -> listado.add(crearJSON(socio)));
+		return listado.toJSONString();
 	}
 
 }

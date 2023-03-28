@@ -1,4 +1,4 @@
-package ar.edu.unlp.info.oo2.ejercicio2b_bibliotec;
+package ar.edu.unlp.info.oo2.ejercicio2b_biblioteca;
 
 import java.util.List;
 
