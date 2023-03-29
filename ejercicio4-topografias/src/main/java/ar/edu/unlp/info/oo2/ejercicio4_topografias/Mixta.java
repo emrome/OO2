@@ -2,7 +2,7 @@ package ar.edu.unlp.info.oo2.ejercicio4_topografias;
 
 import java.util.ArrayList;
 
-public class Mixta implements Topografia{
+public class Mixta extends Topografia{
 	
 	private ArrayList<Topografia> children;
 	
@@ -15,22 +15,22 @@ public class Mixta implements Topografia{
 	}
 
 	
-	public double getProporcion() {
+	public double getProporcionAgua() {
 		return (this.children.stream().
-				mapToDouble(Topografia::getProporcion).
+				mapToDouble(Topografia::getProporcionAgua).
 				sum()) 
-				/4 ;
+				/this.children.size() ;
 	}
 
 	public ArrayList<Topografia> getChildren(){
 		return this.children;
 	}
 	
-	public boolean esIgual(Topografia topografia) {
+	public boolean esIgual(Topografia topografia) { //dudas (si tengo mixta adentro tengo que chequear tambien que ellas coincidan?
 		if(topografia.esMixta()) {
-			this.children.equals(topografia);
+			return this.children.equals(topografia);
 		}
-		return topografia.getProporcion() == this.getProporcion();
+		return super.esIgual(topografia);
 	}
 	
 	public boolean esMixta() {

@@ -1,10 +1,18 @@
 package ar.edu.unlp.info.oo2.ejercicio4_topografias;
 
-public interface Topografia {
+public abstract class Topografia {
 	
-	public double getProporcion();
+	public abstract double getProporcionAgua();
 	
-	public boolean esIgual (Topografia t);
+	public double getProporcionTierra() {
+		return 1 - this.getProporcionAgua();
+	}
 	
-	public boolean esMixta();
+	public boolean esIgual (Topografia t) {
+		return (this.getProporcionAgua() == t.getProporcionAgua());
+	}
+	
+	public boolean esMixta() {
+		return false;
+	}
 }

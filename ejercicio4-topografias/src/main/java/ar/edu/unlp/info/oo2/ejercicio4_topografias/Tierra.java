@@ -1,9 +1,9 @@
 package ar.edu.unlp.info.oo2.ejercicio4_topografias;
 
-public class Tierra extends Atomic{
+public class Tierra extends Topografia{
 
 	@Override
-	public double getProporcion() {
+	public double getProporcionAgua() {
 		return 0;
 	}
 

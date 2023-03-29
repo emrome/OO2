@@ -38,9 +38,9 @@ public class TopografiaTest {
 	}
     @Test
     public void testGetProporcion() {
-    	assertEquals(0, tierra.getProporcion());
-    	assertEquals(1, agua.getProporcion());
-    	assertEquals(0.5, mixta.getProporcion());
+    	assertEquals(0, tierra.getProporcionAgua());
+    	assertEquals(1, agua.getProporcionAgua());
+    	assertEquals(0.5, mixta.getProporcionAgua());
     }
     
     @Test
@@ -54,7 +54,7 @@ public class TopografiaTest {
 		mixta2.add(agua22);
 		mixta2.add(mixta);
 		
-		assertEquals(0.625, mixta2.getProporcion()); //No deberia ser 0.375
+		assertEquals(0.625, mixta2.getProporcionAgua()); //No deberia ser 0.375
 		
 		assertFalse(agua.esIgual(tierra));
 		assertFalse(agua.esIgual(mixta));
