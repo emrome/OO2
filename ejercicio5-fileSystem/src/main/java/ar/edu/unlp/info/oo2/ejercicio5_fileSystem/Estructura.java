@@ -26,5 +26,8 @@ public abstract class Estructura {
 		return tamanio;
 	}
 	
-	public abstract boolean esArchivo();
+	public abstract Archivo archivoMasGrande();
+	
+	public abstract Archivo archivoMasNuevo();
+	
 }

@@ -6,5 +6,7 @@ public class Pantano extends Topografia{
 		return 0.7;
 	}
 
-
+	public boolean esIgualAMixta(Mixta t) {
+		return false;
+	}
 }

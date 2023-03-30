@@ -6,5 +6,8 @@ public class Tierra extends Topografia{
 	public double getProporcionAgua() {
 		return 0;
 	}
-
+	
+	public boolean esIgualAMixta(Mixta t) {
+		return false;
+	}
 }

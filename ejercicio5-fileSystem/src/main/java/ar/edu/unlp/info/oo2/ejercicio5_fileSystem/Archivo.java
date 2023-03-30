@@ -9,9 +9,13 @@ public class Archivo extends Estructura{
 	}
 
 	@Override
-	public boolean esArchivo() {
-		return true;
+	public Archivo archivoMasGrande() {
+		return this;
 	}
-	
-	
+
+	@Override
+	public Archivo archivoMasNuevo() {
+		return this;
+	}
+
 }

@@ -4,8 +4,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class Directorio extends Estructura {
 	
@@ -22,8 +20,9 @@ public class Directorio extends Estructura {
 	}
 	
 	public Archivo archivoMasNuevo() {
-		return this.archivos().stream().
-				max(Comparator.comparing(Archivo::getFechaCreacion)).
+		return this.contenido.stream().
+				map(Estructura::archivoMasNuevo).
+				max(Comparator.comparing(Estructura::getFechaCreacion)).
 				orElse(null);
 		 		/* Faltaria revertir el orden
 		 		 * sorted((a1,a2)-> a1.getFechaCreacion().compareTo(a2.getFechaCreacion())).
@@ -33,8 +32,9 @@ public class Directorio extends Estructura {
 	}
 	
 	public Archivo archivoMasGrande() {
-		return this.archivos().stream().
-				max(Comparator.comparing(Archivo:: tamanoTotalOcupado)).
+		return this.contenido.stream().
+				map(Estructura::archivoMasGrande).
+				max(Comparator.comparing(Estructura::tamanoTotalOcupado)).
 				orElse(null);
 	}
 	
@@ -46,19 +46,6 @@ public class Directorio extends Estructura {
 		this.contenido.remove(estructura);
 	}
 	
-	private List<Archivo> archivos(){
-		
-		List<Archivo> list1 = this.contenido.stream().filter(Estructura::esArchivo).
-							map(e -> (Archivo) e).	
-							collect(Collectors.toList());
-		
-		List<Archivo> list2 =  this.contenido.stream().filter(e->!e.esArchivo()).
-				map(e -> ((Directorio) e).archivos()).
-				flatMap(List::stream)
-				.collect(Collectors.toList());
-		
-		return Stream.concat(list1.stream(),list2.stream()).collect(Collectors.toList());
-	}
 	
 	public boolean esArchivo() {
 		return false;

@@ -5,14 +5,13 @@ public abstract class Topografia {
 	public abstract double getProporcionAgua();
 	
 	public double getProporcionTierra() {
-		return 1 - this.getProporcionAgua();
+		return 1.00 - this.getProporcionAgua();
 	}
 	
 	public boolean esIgual (Topografia t) {
 		return (this.getProporcionAgua() == t.getProporcionAgua());
 	}
 	
-	public boolean esMixta() {
-		return false;
-	}
+	
+	public abstract boolean esIgualAMixta(Mixta t);
 }
