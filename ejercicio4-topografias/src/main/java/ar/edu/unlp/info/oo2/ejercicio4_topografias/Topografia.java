@@ -8,10 +8,13 @@ public abstract class Topografia {
 		return 1.00 - this.getProporcionAgua();
 	}
 	
-	public boolean esIgual (Topografia t) {
+	public boolean equals (Topografia t) {
+		/* Debo redefinir method "equals(Objeto)" para que en las mixta 
+		compare en cuanto a proporcion y no a tipo de elemento
+		*/
 		return (this.getProporcionAgua() == t.getProporcionAgua());
 	}
 	
 	
-	public abstract boolean esIgualAMixta(Mixta t);
+	public abstract boolean equalsAMixta(Mixta t);
 }

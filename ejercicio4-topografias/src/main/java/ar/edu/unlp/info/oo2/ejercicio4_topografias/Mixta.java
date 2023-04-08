@@ -34,16 +34,18 @@ public class Mixta extends Topografia{
 		return this.children;
 	}
 	
-	public boolean esIgual(Topografia topografia) { 
-		return topografia.esIgualAMixta(this);
+	public boolean equals(Topografia topografia) { 
+		return topografia.equalsAMixta(this);
 	}
 
-	public boolean esIgualAMixta(Mixta t) {
-		return this.children.get(0).esIgual(t.getChildren().get(0)) &&
-				this.children.get(1).esIgual(t.getChildren().get(1)) &&
-				this.children.get(2).esIgual(t.getChildren().get(2)) &&
-				this.children.get(3).esIgual(t.getChildren().get(3));
+	public boolean equalsAMixta(Mixta t) {
+		return 
+				this.children.get(0).equals(t.getChildren().get(0)) &&
+				this.children.get(1).equals(t.getChildren().get(1)) &&
+				this.children.get(2).equals(t.getChildren().get(2)) &&
+				this.children.get(3).equals(t.getChildren().get(3));
 				//Mejorar esta parte
+				//this.children.equals(t); Me da error el test
 	}
 	
 }

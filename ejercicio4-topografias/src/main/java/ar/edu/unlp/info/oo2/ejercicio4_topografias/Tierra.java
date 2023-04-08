@@ -7,7 +7,7 @@ public class Tierra extends Topografia{
 		return 0;
 	}
 	
-	public boolean esIgualAMixta(Mixta t) {
+	public boolean equalsAMixta(Mixta t) {
 		return false;
 	}
 }

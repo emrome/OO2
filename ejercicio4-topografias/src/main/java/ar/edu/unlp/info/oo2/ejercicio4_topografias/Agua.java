@@ -7,7 +7,7 @@ public class Agua extends Topografia{
 		return 1;
 	}
 	
-	public boolean esIgualAMixta(Mixta t) {
+	public boolean equalsAMixta(Mixta t) {
 		return false;
 	}
 }
