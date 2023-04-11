@@ -18,7 +18,7 @@ class BibliotecaTest {
 	private Socio tyron;
 	
 	@BeforeEach
-	void setUp () {
+	void setUp () throws Exception{
 		biblioteca = new Biblioteca();
 		arya = new Socio("Arya Stark", "needle@stark.com", "5234-5");
 		tyron = new Socio("Tyron Lannister", "tyron@thelannisters.com",  "2345-2");
