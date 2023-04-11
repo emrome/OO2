@@ -35,7 +35,7 @@ public class Proyecto {
 	 * En otra situación: No produce efecto alguno en el proyecto.
 	 */
 	public void aprobarEtapa() {
-		this.getEtapa().aprobarEtapa(this);
+		this.etapa.aprobarEtapa(this);
 	}
 	
 	
@@ -74,7 +74,7 @@ public class Proyecto {
 	 * Otra situación: No produce efecto alguno en el proyecto.
 	 */
 	public void modificarMargenGanancia(double margen) {
-		if(this.getEtapa().modificarMargenGanancia(margen))
+		if(this.etapa.modificarMargenGanancia(margen))
 			this.margenGanancia = margen;
 	}
 	
@@ -93,9 +93,6 @@ public class Proyecto {
 		this.etapa = etapa;
 	}
 	
-	public Etapa getEtapa() {
-		return this.etapa;
-	}
 	
 	public int getCantIntegrantes() {
 		return this.cantIntegrantes;

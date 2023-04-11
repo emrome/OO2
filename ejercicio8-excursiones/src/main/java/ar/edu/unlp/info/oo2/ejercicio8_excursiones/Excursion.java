@@ -33,11 +33,11 @@ public class Excursion {
 	}
 	
 	public void inscribir(Usuario usuario) {
-		this.getState().inscribir(usuario, this);	
+		this.estado.inscribir(usuario, this);	
 	}
 	
 	public String informacion() {
-		return this.getState().informacion(this);
+		return this.estado.informacion(this);
 	}
 	
 	public boolean alcanzoMin() {
@@ -91,10 +91,6 @@ public class Excursion {
 	}
 	public List<Usuario> getListaDeEspera() {
 		return listaDeEspera;
-	}
-	
-	public State getState() {
-		return this.estado;
 	}
 	
 	public void setState(State state) {
