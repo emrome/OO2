@@ -7,8 +7,12 @@ public abstract class State {
 				+ "' tiene un costo de " + excursion.getCosto()
 				+ " con fecha de inicio " + excursion.getFechaInicio().toString()
 				+ " y fecha de fin " + excursion.getFechaFin().toString()
-				+ ".\nEl punto de encuentro es en '" + excursion.getPuntoDeEncuentro();
+				+ ".\nEl punto de encuentro es en '" + excursion.getPuntoDeEncuentro()
+				+ this.informacionAdicional(excursion); 
+		
 	}
+	
+	public abstract String informacionAdicional(Excursion excursion);
 	
 	public abstract void inscribir(Usuario usuario, Excursion excursion);
 	

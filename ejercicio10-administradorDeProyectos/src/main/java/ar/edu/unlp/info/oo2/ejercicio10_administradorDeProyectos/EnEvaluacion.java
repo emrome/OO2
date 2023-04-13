@@ -1,6 +1,6 @@
 package ar.edu.unlp.info.oo2.ejercicio10_administradorDeProyectos;
 
-public class EnEvaluacion implements Etapa {
+public class EnEvaluacion extends Etapa {
 
 	/**
 	 * En evaluación: El proyecto pasa a etapa “Confirmada”

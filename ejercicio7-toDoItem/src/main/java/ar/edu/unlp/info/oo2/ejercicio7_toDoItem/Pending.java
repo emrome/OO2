@@ -10,7 +10,6 @@ public class Pending extends State{
 	public void start(ToDoItem context) {
 		context.setState(new InProgress());
 		context.setStart(LocalDateTime.now());
-		
 	}
 
 	@Override

@@ -13,11 +13,6 @@ public class Paused extends State{
 		
 	}
 
-	@Override
-	public void finish(ToDoItem context) {
-		context.setState(new Finished());
-		context.setEnd(LocalDateTime.now());
-	}
 
 	@Override
 	public Duration workedTime(ToDoItem context) {

@@ -1,6 +1,6 @@
 package ar.edu.unlp.info.oo2.ejercicio10_administradorDeProyectos;
 
-public class EnConstruccion implements Etapa {
+public class EnConstruccion extends Etapa {
 
 
 	/**

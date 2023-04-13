@@ -92,4 +92,8 @@ public class ToDoItem {
 		this.state.addComment(this,comment);
 	}
 	
+	public State getState() { //Solo valido para test
+		return this.state;
+	}
+	
 }

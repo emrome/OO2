@@ -85,8 +85,9 @@ public class Proyecto {
 	 * Si ya está Cancelado: No produce efecto alguno en el proyecto. 
 	 */
 	public void cancelarProyecto() {
-		if(!this.getObjetivo().contains("(Cancelado)"))
-			this.objetivo += "(Cancelado)";
+		if (!this.objetivo.contains("(Cancelado)")) {
+			this.objetivo+= " (Cancelado)";
+		}//this.objetivo = this.etapa.cancelarProyecto(this);
 	}
 	
 	public void setEtapa(Etapa etapa) {
@@ -122,4 +123,7 @@ public class Proyecto {
 		return nombre;
 	}
 	
+	public Etapa getEtapa() { //Solo valido para test
+		return this.etapa;
+	}
 }

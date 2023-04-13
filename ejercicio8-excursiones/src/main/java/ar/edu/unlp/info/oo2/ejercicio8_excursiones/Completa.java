@@ -6,5 +6,10 @@ public class Completa extends State{
 	public void inscribir(Usuario usuario, Excursion excursion) {
 		excursion.getListaDeEspera().add(usuario);
 	}
+	
+	@Override
+	public String informacionAdicional(Excursion excursion) {
+		return null;
+	}
 
 }
