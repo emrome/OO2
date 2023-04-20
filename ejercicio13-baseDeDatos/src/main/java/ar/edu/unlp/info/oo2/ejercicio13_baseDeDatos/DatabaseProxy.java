@@ -29,7 +29,7 @@ public class DatabaseProxy implements DatabaseAccess{
 		return this.database.insertNewRow(rowData);
 	}
 	
-	public boolean checkAccess() {
+	private boolean checkAccess() {
 		return this.authenticated;
 	}
 	

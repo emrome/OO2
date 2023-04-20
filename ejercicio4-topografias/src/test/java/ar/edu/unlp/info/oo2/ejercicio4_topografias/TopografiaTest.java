@@ -68,26 +68,26 @@ public class TopografiaTest {
     
     @Test
     public void testEsIgual() {
-    	assertTrue(this.tierra.equals(new Tierra()));
-		assertFalse(this.tierra.equals(new Agua()));
-		assertFalse(this.tierra.equals(new Pantano()));
+    	assertTrue(this.tierra.esIgual(new Tierra()));
+		assertFalse(this.tierra.esIgual(new Agua()));
+		assertFalse(this.tierra.esIgual(new Pantano()));
 		
-		assertTrue(this.agua.equals(new Agua()));
-		assertFalse(this.agua.equals(new Tierra()));
-		assertFalse(this.agua.equals(new Pantano()));
+		assertTrue(this.agua.esIgual(new Agua()));
+		assertFalse(this.agua.esIgual(new Tierra()));
+		assertFalse(this.agua.esIgual(new Pantano()));
 		
-		assertTrue(this.pantano.equals(new Pantano()));
-		assertFalse(this.pantano.equals(new Agua()));
-		assertFalse(this.pantano.equals(new Tierra()));
+		assertTrue(this.pantano.esIgual(new Pantano()));
+		assertFalse(this.pantano.esIgual(new Agua()));
+		assertFalse(this.pantano.esIgual(new Tierra()));
 		
-		assertFalse(mixta.equals(new Pantano()));
-		assertFalse(mixta.equals(new Agua()));
-		assertFalse(mixta.equals(new Tierra()));
-		assertFalse(mixta.equals(mixta2));
-		assertTrue(mixta.equals(mixta));
+		assertFalse(mixta.esIgual(new Pantano()));
+		assertFalse(mixta.esIgual(new Agua()));
+		assertFalse(mixta.esIgual(new Tierra()));
+		assertFalse(mixta.esIgual(mixta2));
+		assertTrue(mixta.esIgual(mixta));
 		
 		Mixta mixta3 = new Mixta(agua,tierra,agua,mixta2); 
-		assertFalse(mixta2.equals(mixta3)); 
+		assertFalse(mixta2.esIgual(mixta3)); 
 		//ambas tiene mixta al final, pero esas mixtas son diferentes
     }
     

@@ -34,18 +34,27 @@ public class Mixta extends Topografia{
 		return this.children;
 	}
 	
-	public boolean equals(Topografia topografia) { 
+	public boolean esIgual(Topografia topografia) { 
 		return topografia.equalsAMixta(this);
 	}
-
+	
+	@Override
+	public boolean equals(Object obj) {
+		if(obj instanceof Topografia)
+			return this.esIgual((Topografia)obj);	
+		return false;
+	}
+	
 	public boolean equalsAMixta(Mixta t) {
 		return 
-				this.children.get(0).equals(t.getChildren().get(0)) &&
-				this.children.get(1).equals(t.getChildren().get(1)) &&
-				this.children.get(2).equals(t.getChildren().get(2)) &&
-				this.children.get(3).equals(t.getChildren().get(3));
+				/*
+				* this.children.get(0).equals(t.getChildren().get(0)) &&
+				* this.children.get(1).equals(t.getChildren().get(1)) &&
+				* this.children.get(2).equals(t.getChildren().get(2)) &&
+				* this.children.get(3).equals(t.getChildren().get(3));
 				//Mejorar esta parte
-				//this.children.equals(t); Me da error el test
+				*/
+				this.children.equals(t.getChildren());
 	}
 	
 }
