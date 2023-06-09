@@ -10,41 +10,51 @@ import org.junit.jupiter.api.Test;
 
 public class SubteWayTest {
 	
-	SandwichBuilder builder;
+	Builder builderClasico;
+	Builder builderVegano;
+	Builder builderVeggie;
+	Builder builderSinTacc;
 	SubteWay subteway;
 	Sandwich sandwich;
 	
 	@BeforeEach
 	void setUp() throws Exception {
-		builder = new SandwichBuilder();
-		subteway = new SubteWay(builder);
+		subteway = new SubteWay();
 	}
 	
     @Test
     public void testSandwichClasico() {
-    	subteway.sandwichClasico();
-    	sandwich = builder.obtenerSandwich();
+    	builderClasico = new ClasicoBuilder();
+    	subteway.setBuilder(builderClasico);
+    	subteway.crearSandwich();
+    	sandwich = subteway.getSandwich();
     	assertEquals(500, sandwich.calcularPrecio());
     }
     
     @Test
     public void testSandwichVegetariano() {
-    	subteway.sandwichVegetariano();
-    	sandwich = builder.obtenerSandwich();
+    	builderVeggie = new VeggieBuilder();
+    	subteway.setBuilder(builderVeggie);
+    	subteway.crearSandwich();
+    	sandwich = subteway.getSandwich();
     	assertEquals(420, sandwich.calcularPrecio());
     }
     
     @Test
     public void testSandwichVegano() {
-    	subteway.sandwichVegano();
-    	sandwich = builder.obtenerSandwich();
+    	builderVegano = new VeganoBuilder();
+    	subteway.setBuilder(builderVegano);
+    	subteway.crearSandwich();
+    	sandwich = subteway.getSandwich();
     	assertEquals(620, sandwich.calcularPrecio());
     }
     
     @Test
     public void testSandwichSinTacc() {
-    	subteway.sandwichSinTacc();
-    	sandwich = builder.obtenerSandwich();
+    	builderSinTacc = new SinTACCBuilder();
+    	subteway.setBuilder(builderSinTacc);
+    	subteway.crearSandwich();
+    	sandwich = subteway.getSandwich();
     	assertEquals(618, sandwich.calcularPrecio());
     }
 }

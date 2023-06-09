@@ -1,11 +1,22 @@
 package ar.edu.unlp.info.oo2.ejercicio18_subteWay;
 
-public interface Builder {
+public abstract class Builder {
 	
-	public void crearSandwich();
-	public void agregarPan(double pan);
-	public void agregarAderezo(double aderezo);
-	public void agregarPrincipal(double principal);
-	public void agregarAdicional(double adicional);
+	protected Sandwich sandwich;
+	
+	public Builder() {
+		this.sandwich = new Sandwich();
+	}
+	
+	public Sandwich getSandwich() {
+		Sandwich aux = sandwich;
+		this.sandwich = new Sandwich();
+		return aux;
+	}
+	
+	public abstract void agregarPan();
+	public abstract void agregarAderezo();
+	public abstract void agregarPrincipal();
+	public abstract void agregarAdicional();
 
 }

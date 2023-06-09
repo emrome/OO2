@@ -1,43 +1,25 @@
 package ar.edu.unlp.info.oo2.ejercicio18_subteWay;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Sandwich {
 	
-	private double pan;
-	private double aderezo;
-	private double principal;
-	private double adicional;
+	private List<Ingrediente> ingredientes;
 	
-	public void setPan(double pan) {
-		this.pan = pan;
-	}
-	public void setAderezo(double aderezo) {
-		this.aderezo = aderezo;
-	}
-	public void setPrincipal(double principal) {
-		this.principal = principal;
-	}
-	public void setAdicional(double adicional) {
-		this.adicional = adicional;
-	}
-		
-	public double getPan() {
-		return pan;
+	public Sandwich() {
+		this.ingredientes = new ArrayList<Ingrediente>();
 	}
 	
-	public double getAderezo() {
-		return aderezo;
+	public void agregarIngrediente(String nombre, double precio) {
+		this.ingredientes.add(new Ingrediente(nombre, precio));
 	}
 	
-	public double getPrincipal() {
-		return principal;
+	public List<Ingrediente> getIngredientes(){
+		return this.ingredientes;
 	}
-	
-	public double getAdicional() {
-		return adicional;
-	}
-	
 	public double calcularPrecio() {
-		return this.getPan() + this.getAderezo() + this.getPrincipal() + this.getAdicional();
+		return this.ingredientes.stream().mapToDouble(Ingrediente::getPrecio).sum();
 	}
 	
 }
